@@ -22,6 +22,12 @@
     nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(26,26,46,.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.08); }
     .nav-inner { height: 78px; display: grid; grid-template-columns: 220px 1fr 190px; gap: 24px; align-items: center; }
     .logo { height: 48px; width: auto; filter: brightness(0) invert(1); object-fit: contain; }
+    .nav-logo-img { height: 48px; width: auto; max-width: 210px; object-fit: contain; }
+    .nav-logo-fallback { display: none; flex-direction: column; line-height: 1; }
+    .nav-logo-squares { display: flex; gap: 4px; }
+    .nav-logo-square { width: 18px; height: 18px; background: var(--orange); }
+    .nav-logo-main { color: white; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; margin-top: 4px; }
+    .nav-tagline { color: var(--orange); font-size: 9px; letter-spacing: 0.1em; }
     .nav-links { display: flex; justify-content: center; gap: 24px; color: rgba(255,255,255,.82); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
     .nav-links a:hover { color: #fff; }
     .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 14px 22px; font-weight: 800; letter-spacing: .01em; transition: .2s ease; border: 2px solid transparent; cursor: pointer; }
@@ -30,7 +36,7 @@
     .btn-white { background: #fff; color: var(--navy); }
     .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; }
     .btn-outline:hover { background: #fff; color: var(--navy); }
-    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background-image: linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.75) 100%), url('https://maps.googleapis.com/maps/api/streetview?size=1600x900&location=5501+Abercorn+Street+Savannah+GA&fov=90&heading=180&pitch=0&key=placeholder'); background-size: cover; background-position: center; }
+    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background-image: linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.75) 100%), url('https://tile.openstreetmap.org/17/35297/52043.png'); background-size: cover; background-position: center; }
     #hero:before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.75) 100%); }
     .hero-grid { position: relative; z-index: 2; display: block; max-width: 900px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(203,82,30,.22); color: #fff; border: 1px solid rgba(203,82,30,.55); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
@@ -112,7 +118,7 @@
 <body>
   <nav>
     <div class="container nav-inner">
-      <a href="#hero"><img src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:48px; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span style="display:none; color:white; font-weight:700; font-size:1.2rem; letter-spacing:0.05em;">PIER <span style="color:#CB521E;">COMMERCIAL</span></span></a>
+      <a href="#hero" aria-label="PIER Commercial Real Estate home"><img class="nav-logo-img" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="nav-logo-fallback" aria-hidden="true"><div class="nav-logo-squares"><div class="nav-logo-square"></div><div class="nav-logo-square"></div><div class="nav-logo-square"></div><div class="nav-logo-square"></div></div><span class="nav-logo-main">PIER COMMERCIAL</span><span class="nav-tagline">REAL ESTATE</span></div></a>
       <div class="nav-links">
         <a href="#overview">Overview</a><a href="#highlights">Highlights</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#market">Market</a><a href="#opportunity">Opportunity</a><a href="#contact">Contact</a>
       </div>

@@ -8,3 +8,8 @@ Internal verification and correction notes moved off the public page.
 - Location section uses one primary Google Maps embed with neighborhood demand generators.
 - Public page avoids process notes, source disclaimers, placeholder logo blocks, and four-map gallery grids.
 - Remaining diligence items should be tracked internally using the PIER property data verification playbook.
+
+2026-06-15 follow-up corrections:
+- Logo URL was extracted from the live PIER homepage with Python/BeautifulSoup before use.
+- Playwright Google Street View screenshot attempt produced a non-property map/loading image, so the hero now uses the approved OpenStreetMap tile fallback.
+- Inline logo fallback uses orange #CB521E for the REAL ESTATE tagline.
