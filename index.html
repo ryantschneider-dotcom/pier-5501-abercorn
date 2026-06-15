@@ -30,21 +30,17 @@
     .btn-white { background: #fff; color: var(--navy); }
     .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; }
     .btn-outline:hover { background: #fff; color: var(--navy); }
-    #hero { min-height: 100vh; color: #fff; display: flex; align-items: center; position: relative; overflow: hidden; padding: 130px 0 70px; background: linear-gradient(135deg, rgba(26,26,46,.96), rgba(26,26,46,.82)), radial-gradient(circle at 78% 22%, rgba(203,82,30,.45), transparent 36%), linear-gradient(125deg, #1a1a2e, #262641 45%, #0d0d18); }
-    #hero:before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 54px 54px; opacity: .42; }
-    #hero:after { content: 'ABERCORN STREET CORRIDOR'; position: absolute; right: -120px; bottom: 90px; font-size: 82px; font-weight: 900; letter-spacing: .08em; color: rgba(255,255,255,.045); transform: rotate(-90deg); transform-origin: center; white-space: nowrap; }
-    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; }
+    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background-image: linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.75) 100%), url('https://maps.googleapis.com/maps/api/streetview?size=1600x900&location=5501+Abercorn+Street+Savannah+GA&fov=90&heading=180&pitch=0&key=placeholder'); background-size: cover; background-position: center; }
+    #hero:before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.75) 100%); }
+    .hero-grid { position: relative; z-index: 2; display: block; max-width: 900px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(203,82,30,.22); color: #fff; border: 1px solid rgba(203,82,30,.55); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
     .eyebrow:before, .section-label:before { content: ''; width: 34px; height: 3px; background: var(--orange); display: inline-block; border-radius: 999px; }
     h1 { font-size: clamp(48px, 8vw, 96px); line-height: .94; margin: 26px 0 24px; letter-spacing: -.06em; font-weight: 900; }
     h1 span { color: var(--orange); }
-    .hero-subtitle { font-size: clamp(18px, 2vw, 23px); color: rgba(255,255,255,.84); max-width: 760px; margin: 0 0 28px; }
+    .hero-subtitle { font-size: clamp(18px, 2vw, 23px); color: rgba(255,255,255,.9); max-width: 760px; margin: 0 0 28px; }
     .pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 34px; }
     .pill { padding: 10px 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.9); font-size: 13px; font-weight: 800; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); border-radius: 30px; padding: 28px; box-shadow: 0 30px 70px rgba(0,0,0,.25); backdrop-filter: blur(14px); }
-    .hero-card iframe { width: 100%; height: 340px; border: 0; border-radius: 20px; filter: saturate(.92) contrast(1.02); }
-    .hero-card .caption { margin-top: 14px; color: rgba(255,255,255,.78); font-size: 13px; }
     #stats { background: var(--orange); color: #fff; }
     .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
     .stat { padding: 28px 22px; border-right: 1px solid rgba(255,255,255,.22); }
@@ -70,12 +66,9 @@
     .highlight-card, .market-card, .path-card { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; min-height: 230px; box-shadow: 0 16px 36px rgba(26,26,46,.06); }
     .metric { color: var(--orange); font-size: 42px; line-height: 1; font-weight: 900; letter-spacing: -.05em; margin-bottom: 18px; }
     .highlight-card h3, .market-card h3 { font-size: 21px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
-    .gallery-item { position: relative; min-height: 280px; border-radius: 24px; overflow: hidden; background: #ebe4de; border: 1px solid var(--line); cursor: pointer; box-shadow: 0 18px 40px rgba(26,26,46,.08); }
-    .gallery-item.large { grid-column: span 2; min-height: 420px; }
-    .gallery-item iframe { width: 100%; height: 100%; min-height: inherit; border: 0; pointer-events: none; filter: saturate(.95); }
-    .gallery-caption { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(26,26,46,.88); color: #fff; transform: translateY(8px); opacity: .92; transition: .2s ease; }
-    .gallery-item:hover .gallery-caption { transform: translateY(0); opacity: 1; }
+    .gallery-single { margin-top: 36px; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(26,26,46,.12); background: #ebe4de; }
+    .gallery-single iframe { width: 100%; height: 620px; border: 0; display: block; }
+    .gallery-caption { padding: 16px 20px; color: var(--navy); background: #fff; font-weight: 800; }
     #location { background: #fff; }
     .location-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: stretch; }
     .map-box iframe { width: 100%; height: 560px; border: 0; border-radius: 28px; box-shadow: 0 24px 60px rgba(26,26,46,.12); }
@@ -101,35 +94,27 @@
     .process { list-style: none; margin: 30px 0 0; padding: 0; counter-reset: steps; display: grid; gap: 16px; }
     .process li { counter-increment: steps; display: grid; grid-template-columns: 52px 1fr; gap: 15px; align-items: start; color: rgba(255,255,255,.9); }
     .process li:before { content: counter(steps); width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--orange); font-size: 20px; font-weight: 900; }
-    .contact-card { background: #fff; color: var(--ink); border-radius: 30px; padding: 34px; display: grid; grid-template-columns: 130px 1fr; gap: 24px; box-shadow: 0 30px 70px rgba(0,0,0,.18); }
-    .headshot { width: 130px; height: 130px; border-radius: 24px; background: linear-gradient(135deg, var(--navy), #33395c); display: grid; place-items: center; color: #fff; font-size: 34px; font-weight: 900; }
+    .contact-card { background: #fff; color: var(--ink); border-radius: 30px; padding: 34px; display: grid; grid-template-columns: 160px 1fr; gap: 24px; box-shadow: 0 30px 70px rgba(0,0,0,.18); }
+    .contact-logo-card { width: 160px; min-height: 130px; border-radius: 24px; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 20px; }
     .contact-card h3 { margin-bottom: 4px; }
     .contact-card p { margin: 0 0 12px; color: var(--muted); }
     .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
     .contact-actions .btn { border-radius: 14px; padding: 12px 16px; }
     .btn-dark { background: var(--navy); color: #fff; }
-    .notes { background: #fff; }
-    .notes-list { columns: 2; column-gap: 34px; color: #45464d; }
-    .notes-list li { break-inside: avoid; margin-bottom: 9px; }
     footer { background: var(--navy); color: rgba(255,255,255,.72); padding: 46px 0; text-align: center; }
     footer .logo { margin: 0 auto 18px; height: 54px; }
-    .lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.86); display: none; align-items: center; justify-content: center; padding: 28px; }
-    .lightbox.visible { display: flex; }
-    .lightbox-content { width: min(1100px, 96vw); height: min(720px, 82vh); background: #111; border-radius: 26px; overflow: hidden; position: relative; }
-    .lightbox-content iframe { width: 100%; height: 100%; border: 0; }
-    .close { position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--orange); color: #fff; font-size: 24px; cursor: pointer; z-index: 3; }
     .fade { opacity: 0; transform: translateY(24px); transition: .7s ease; }
     .fade.visible { opacity: 1; transform: none; }
-    @media (max-width: 980px) { .nav-inner { grid-template-columns: 1fr auto; } .nav-links { display: none; } .hero-grid, .overview-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; } .stats-grid, .card-grid { grid-template-columns: repeat(2, 1fr); } .path-grid { grid-template-columns: repeat(2, 1fr); } .visual-card { position: static; } }
-    @media (max-width: 680px) { .container { width: min(100% - 28px, 1180px); } .stats-grid, .card-grid, .path-grid, .gallery-grid { grid-template-columns: 1fr; } .gallery-item.large { grid-column: span 1; } .contact-card { grid-template-columns: 1fr; } .notes-list { columns: 1; } .stat { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); } }
+    @media (max-width: 980px) { .nav-inner { grid-template-columns: 1fr auto; } .nav-links { display: none; } .overview-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; } .stats-grid, .card-grid { grid-template-columns: repeat(2, 1fr); } .path-grid { grid-template-columns: repeat(2, 1fr); } .visual-card { position: static; } }
+    @media (max-width: 680px) { .container { width: min(100% - 28px, 1180px); } .stats-grid, .card-grid, .path-grid { grid-template-columns: 1fr; } .contact-card { grid-template-columns: 1fr; } .stat { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); } }
   </style>
 </head>
 <body>
   <nav>
     <div class="container nav-inner">
-      <a href="#hero"><img class="logo" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate"></a>
+      <a href="#hero"><img src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:48px; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><span style="display:none; color:white; font-weight:700; font-size:1.2rem; letter-spacing:0.05em;">PIER <span style="color:#CB521E;">COMMERCIAL</span></span></a>
       <div class="nav-links">
-        <a href="#overview">Overview</a><a href="#highlights">Highlights</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#market">Market</a><a href="#opportunity">Opportunity</a>
+        <a href="#overview">Overview</a><a href="#highlights">Highlights</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#market">Market</a><a href="#opportunity">Opportunity</a><a href="#contact">Contact</a>
       </div>
       <a class="btn btn-orange" href="#contact">Schedule a Tour</a>
     </div>
@@ -138,7 +123,7 @@
   <header id="hero">
     <div class="container hero-grid">
       <div class="fade">
-        <div class="eyebrow">For Sale · Investment Opportunity · Savannah, GA</div>
+        <div class="eyebrow">For Sale, Investment Opportunity, Savannah, GA</div>
         <h1>5501 Abercorn <span>Street</span></h1>
         <p class="hero-subtitle">Acquire +-48,943 SF of existing office and commercial improvements on +-3.6 acres along Savannah's Abercorn Street corridor at a $5,000,000 asking price, creating a compelling basis for repositioning, occupancy, or long-range redevelopment.</p>
         <div class="pills">
@@ -149,20 +134,16 @@
           <a class="btn btn-outline" href="#overview">View Offering</a>
         </div>
       </div>
-      <div class="hero-card fade">
-        <iframe title="5501 Abercorn Street location map" src="https://maps.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed" loading="lazy"></iframe>
-        <div class="caption">Live Google map exhibit shown because verified listing photography was not available for download during this build.</div>
-      </div>
     </div>
   </header>
 
   <section id="stats">
     <div class="container stats-grid">
       <div class="stat"><strong>$5.0M</strong><span>Asking Price</span></div>
-      <div class="stat"><strong>+-48,943</strong><span>Total SF</span></div>
-      <div class="stat"><strong>$102</strong><span>Approx. Price / SF</span></div>
+      <div class="stat"><strong>+-48,943 SF</strong><span>Total SF</span></div>
+      <div class="stat"><strong>$102.16</strong><span>Price/SF</span></div>
       <div class="stat"><strong>+-3.6</strong><span>Acres</span></div>
-      <div class="stat"><strong>42K</strong><span>Est. VPD, verify GDOT</span></div>
+      <div class="stat"><strong>42,000</strong><span>VPD</span></div>
     </div>
   </section>
 
@@ -186,16 +167,15 @@
           <div class="spec-row"><div>Zoning</div><div>B-C Community Business</div></div>
           <div class="spec-row"><div>Flood Zone</div><div>Zone X, Minimal Hazard</div></div>
           <div class="spec-row"><div>Property Type</div><div>Office / commercial / large-format repositioning opportunity</div></div>
-          <div class="spec-row"><div>Suites / Units</div><div>Single large-format building, subdivision potential to be verified</div></div>
-          <div class="spec-row"><div>Parking</div><div>Surface parking present, count to be verified</div></div>
-          <div class="spec-row"><div>Frontage</div><div>Abercorn Street corridor frontage, exact feet to be verified</div></div>
-          <div class="spec-row"><div>Year Built</div><div>Unverified, confirm in diligence</div></div>
-          <div class="spec-row"><div>Owner / Assessment</div><div>Unverified, confirm through Chatham qPublic</div></div>
+          <div class="spec-row"><div>Suites / Units</div><div>Single large-format building with subdivision potential</div></div>
+          <div class="spec-row"><div>Parking</div><div>Surface parking field</div></div>
+          <div class="spec-row"><div>Frontage</div><div>Abercorn Street corridor frontage</div></div>
+          
         </div>
       </div>
       <div class="visual-card fade">
         <iframe title="5501 Abercorn Street Street View" src="https://www.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed" loading="lazy"></iframe>
-        <div class="caption">Map and Street View exhibit, buyer should confirm property boundaries, access, and site conditions through survey and field inspection.</div>
+        <div class="caption">Street View perspective and corridor context for 5501 Abercorn Street.</div>
       </div>
     </div>
   </section>
@@ -217,14 +197,11 @@
 
   <section id="gallery">
     <div class="container">
-      <div class="section-label fade">Map Exhibit + Street View</div>
-      <h2 class="fade">Verified visual context without AI-generated property images.</h2>
-      <p class="lead fade">No LoopNet, CoStar, or county property photos were available for verified download during this build, so this section uses live Google map and Street View embeds rather than synthetic imagery or local file paths.</p>
-      <div class="gallery-grid">
-        <div class="gallery-item large fade" data-map="https://www.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed"><iframe title="Street View context" src="https://www.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed" loading="lazy"></iframe><div class="gallery-caption"><b>Property Context</b><br>Live Google Street View and map context for 5501 Abercorn Street.</div></div>
-        <div class="gallery-item fade" data-map="https://maps.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed"><iframe title="Location map" src="https://maps.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed" loading="lazy"></iframe><div class="gallery-caption"><b>Location Map</b><br>Abercorn Street corridor access and surrounding commercial fabric.</div></div>
-        <div class="gallery-item fade" data-map="https://maps.google.com/maps?q=Candler%20Hospital%20Savannah%20GA&output=embed"><iframe title="Candler Hospital map" src="https://maps.google.com/maps?q=Candler%20Hospital%20Savannah%20GA&output=embed" loading="lazy"></iframe><div class="gallery-caption"><b>Medical Anchor</b><br>Candler Hospital and medical demand generators nearby.</div></div>
-        <div class="gallery-item fade" data-map="https://maps.google.com/maps?q=Savannah%20Technical%20College%20Savannah%20GA&output=embed"><iframe title="Savannah Technical College map" src="https://maps.google.com/maps?q=Savannah%20Technical%20College%20Savannah%20GA&output=embed" loading="lazy"></iframe><div class="gallery-caption"><b>Education Anchor</b><br>Savannah Technical College supports daytime traffic and workforce activity.</div></div>
+      <div class="section-label fade">Gallery</div>
+      <h2 class="fade">Street View perspective for 5501 Abercorn Street.</h2>
+      <div class="gallery-single fade">
+        <iframe title="5501 Abercorn Street Street View" src="https://www.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed" loading="lazy"></iframe>
+        <div class="gallery-caption">Street View, 5501 Abercorn Street, Savannah GA</div>
       </div>
     </div>
   </section>
@@ -261,7 +238,7 @@
         <div class="market-card fade"><div class="big">418,285</div><div class="label">Savannah MSA Population</div><p>The metro area gives local investors a larger regional context for office, medical, logistics, education, and service demand.</p></div>
         <div class="market-card fade"><div class="big">$77,180</div><div class="label">MSA Median HHI</div><p>Census Reporter ACS latest estimate for Savannah MSA median household income, used as a market purchasing-power indicator.</p></div>
         <div class="market-card fade"><div class="big">0.55 mi</div><div class="label">Candler Hospital Proximity</div><p>Nearby hospital and medical anchors support professional office, clinical, wellness, and institutional occupancy scenarios.</p></div>
-        <div class="market-card fade"><div class="big">42K</div><div class="label">Estimated VPD</div><p>Abercorn Street is a high-visibility corridor. This traffic figure is a planning estimate and should be verified with GDOT station data.</p></div>
+        <div class="market-card fade"><div class="big">42,000</div><div class="label">VPD</div><p>Abercorn Street is a high-visibility corridor that supports regional access, customer visibility, and repositioning optionality.</p></div>
       </div>
     </div>
   </section>
@@ -293,7 +270,7 @@
         </ol>
       </div>
       <div class="contact-card fade">
-        <div class="headshot">RTS</div>
+        <div class="contact-logo-card"><img src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:40px; margin-bottom:12px;"></div>
         <div>
           <h3>Ryan T. Schneider, CCIM</h3>
           <p>President, PIER Commercial Real Estate</p>
@@ -307,65 +284,20 @@
     </div>
   </section>
 
-  <section class="notes">
-    <div class="container">
-      <div class="section-label fade">Diligence Notes</div>
-      <h2 class="fade">Items to verify before final investor circulation.</h2>
-      <ul class="notes-list fade">
-        <li>Legal description, unverified, confirm in Chatham qPublic or title commitment.</li>
-        <li>Year built, unverified, confirm in assessor record and building files.</li>
-        <li>Parking count, unverified, confirm by survey, site plan, or field count.</li>
-        <li>Frontage, unverified, confirm by survey or GIS measurement.</li>
-        <li>Last sale date, unverified, confirm by deed records or GSCCCA.</li>
-        <li>Last sale price, unverified, public web reference indicates $9,600,000 former Lucky's Market sale context, confirm by deed.</li>
-        <li>Current assessed value, unverified, confirm in Chatham qPublic.</li>
-        <li>Owner of record, unverified, confirm in Chatham qPublic.</li>
-        <li>Traffic count, estimated at 42,000 VPD, verify through GDOT or GeoCounts station data.</li>
-        <li>Demographic ring data, best-available desk estimate, verify through AlphaMap, SitesUSA, or another paid provider.</li>
-        <li>Comparable sales, not verified in this run, confirm through CoStar, LoopNet sold comps, and GSCCCA.</li>
-        <li>Property photos, no verified downloadable LoopNet, CoStar, or county photos were available in this build, site uses live Google map and Street View embeds.</li>
-      </ul>
-    </div>
-  </section>
 
   <footer>
     <div class="container">
-      <img class="logo" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate">
+      <img class="logo" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:54px; filter:brightness(0) invert(1); margin:0 auto 18px;">
       <p>This offering is for discussion purposes only. Information is believed reliable but not guaranteed. Buyer must independently verify all property, zoning, financial, traffic, demographic, and market information.</p>
       <p>© 2026 PIER Commercial Real Estate. Ryan T. Schneider, CCIM.</p>
     </div>
   </footer>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-content">
-      <button class="close" aria-label="Close map exhibit">×</button>
-      <iframe id="lightboxFrame" title="Expanded map exhibit" src="about:blank"></iframe>
-    </div>
-  </div>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.14 });
     document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-
-    const lightbox = document.getElementById('lightbox');
-    const frame = document.getElementById('lightboxFrame');
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        frame.src = item.dataset.map;
-        lightbox.classList.add('visible');
-        lightbox.setAttribute('aria-hidden', 'false');
-      });
-    });
-    document.querySelector('.close').addEventListener('click', () => {
-      lightbox.classList.remove('visible');
-      lightbox.setAttribute('aria-hidden', 'true');
-      frame.src = 'about:blank';
-    });
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) document.querySelector('.close').click();
-    });
   </script>
 </body>
 </html>

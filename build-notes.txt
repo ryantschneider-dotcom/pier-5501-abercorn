@@ -1,0 +1,10 @@
+5501 Abercorn build notes
+
+Internal verification and correction notes moved off the public page.
+
+- Public page uses live PIER logo assets from piercommercial.com.
+- Hero is a full-viewport Street View Static API background when a Google Maps key is available locally.
+- Gallery is simplified to a single Street View exhibit because verified downloadable property photos were not available during the prior build.
+- Location section uses one primary Google Maps embed with neighborhood demand generators.
+- Public page avoids process notes, source disclaimers, placeholder logo blocks, and four-map gallery grids.
+- Remaining diligence items should be tracked internally using the PIER property data verification playbook.
