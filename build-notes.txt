@@ -13,3 +13,8 @@ Internal verification and correction notes moved off the public page.
 - Logo URL was extracted from the live PIER homepage with Python/BeautifulSoup before use.
 - Playwright Google Street View screenshot attempt produced a non-property map/loading image, so the hero now uses the approved OpenStreetMap tile fallback.
 - Inline logo fallback uses orange #CB521E for the REAL ESTATE tagline.
+2026-06-15 follow-up hero correction:
+- OSM tile fallback rejected because the 256x256 tile repeats and is not professional enough for a PIER OM hero.
+- LoopNet photo extraction was attempted with Playwright but the listing returned Access Denied with no image candidates.
+- Google Maps Static satellite fallback request returned non-image access error, so no bad photos/hero.jpg file was committed.
+- Hero now uses the approved last-resort clean dark gradient with background-repeat:no-repeat.
