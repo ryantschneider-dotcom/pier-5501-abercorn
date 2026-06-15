@@ -12,6 +12,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
+
+    /* GLOBAL LIGHT MODE OVERRIDE */
+    body { background: #ffffff !important; color: #1a1a2e !important; }
+    section:not(#hero):not(#stats):not(.stats-bar):not(#contact):not(footer) {
+        background: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    section:nth-child(even):not(#hero):not(#stats):not(.stats-bar):not(#contact):not(footer) {
+        background: #f8f8f8 !important;
+    }
+    h1, h2, h3, h4, p, li, td, th, span:not(.eyebrow):not(.stat-label):not(.stat-value) {
+        color: inherit;
+    }
+
     :root { --orange: #CB521E; --navy: #1a1a2e; --dark: #0f1923; --ink: #1a1a2e; --muted: #5f6672; --soft: #f8f8f8; --line: #e8e8e8; --white: #fff; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
