@@ -1,0 +1,78 @@
+{
+  "property": {
+    "address": "5501 Abercorn Street",
+    "city": "Savannah",
+    "state": "GA",
+    "zip": "31405",
+    "county": "Chatham County",
+    "parcelId": "20127 03004",
+    "legalDescription": "Chatham County parcel legal description unverified, confirm on qPublic before final OM circulation",
+    "zoning": "B-C Community Business",
+    "yearBuilt": "Unverified",
+    "buildingSF": 48943,
+    "landSF": 156816,
+    "acres": 3.6,
+    "unitsSuites": "Single large-format commercial building, subdivision potential unverified",
+    "parkingCount": "Surface parking present, count unverified",
+    "frontageFt": "Abercorn Street frontage, exact feet unverified",
+    "lastSaleDate": "Unverified, public web reference indicates former Lucky's Market sale context",
+    "lastSalePrice": "Unverified, public web reference indicates $9,600,000 former Lucky's Market sale context",
+    "currentAssessedValue": "Unverified, confirm in Chatham qPublic",
+    "ownerOfRecord": "Unverified, confirm in Chatham qPublic",
+    "floodZone": "Zone X, Minimal Hazard",
+    "propertyType": "Office / commercial / large-format retail-showroom conversion opportunity",
+    "listingType": "Sale",
+    "askingPrice": 5000000,
+    "pricePerSF": 102.16,
+    "coordinates": { "lat": 32.02708, "lon": -81.10924 }
+  },
+  "demographics": {
+    "methodNote": "Ring values are best-available desk-research estimates derived from Census Reporter ACS 2023 tract/city/county/MSA data and local radius context. Verify with AlphaMap or paid demographic provider before final investor distribution.",
+    "oneMile": { "population": 9800, "households": 4600, "medianHHI": 67444, "daytimePopulation": 14500, "growth2020to2025Pct": 2.1 },
+    "threeMile": { "population": 76000, "households": 31500, "medianHHI": 61000, "daytimePopulation": 98000, "growth2020to2025Pct": 3.4 },
+    "fiveMile": { "population": 137000, "households": 55000, "medianHHI": 63000, "daytimePopulation": 168000, "growth2020to2025Pct": 4.0 },
+    "censusReporter": {
+      "tract_13051004001": { "population": 3833, "households": 1889, "medianHHI": 67444 },
+      "savannahCity": { "population": 148809, "households": 54740, "medianHHI": 55907 },
+      "chathamCounty": { "population": 300879, "households": 120383, "medianHHI": 71097 },
+      "savannahMSA": { "population": 418285, "households": 161273, "medianHHI": 77180 }
+    }
+  },
+  "traffic": {
+    "primaryStreet": "Abercorn Street",
+    "estimatedVPD": 42000,
+    "note": "Best available planning estimate for Abercorn Street corridor traffic. Verify against GDOT or GeoCounts station count before final OM circulation."
+  },
+  "marketDrivers": {
+    "cushmanWakefield": "Cushman & Wakefield U.S. MarketBeats page lists MarketBeat Savannah, dated 4/27/2026, covering commercial real estate supply, demand, and pricing trends.",
+    "seda": "SEDA resources page targeted for employment, port, and announcement context but was Cloudflare blocked during desk research.",
+    "georgiaPorts": "Georgia Ports Authority news pages targeted for port tonnage and expansion context but were Cloudflare blocked during desk research.",
+    "thesisDrivers": [
+      "Savannah benefits from port-led logistics growth, healthcare employment, tourism, higher education, and steady in-migration.",
+      "Abercorn Street remains one of Savannah's most durable north-south commercial corridors.",
+      "The property sits near Candler Hospital, Savannah Technical College, Twelve Oaks Shopping Center, Publix, and regional medical demand."
+    ]
+  },
+  "nearbyDemandGenerators": [
+    { "name": "Enson Market", "category": "Specialty grocery anchor", "distanceMiles": 0.04, "source": "OpenStreetMap Overpass" },
+    { "name": "Georgia Department of Labor", "category": "Government office", "distanceMiles": 0.15, "source": "OpenStreetMap Overpass" },
+    { "name": "Publix", "category": "Grocery anchor", "distanceMiles": 0.19, "source": "OpenStreetMap Overpass" },
+    { "name": "Twelve Oaks Shopping Center", "category": "Retail center", "distanceMiles": 0.22, "source": "OpenStreetMap Overpass" },
+    { "name": "Savannah Technical College", "category": "Higher education", "distanceMiles": 0.42, "source": "OpenStreetMap Overpass" },
+    { "name": "Nancy N. and J.C. Lewis Cancer Center", "category": "Medical specialty care", "distanceMiles": 0.42, "source": "OpenStreetMap Overpass" },
+    { "name": "Mary Telfair Women's Hospital", "category": "Hospital", "distanceMiles": 0.53, "source": "OpenStreetMap Overpass" },
+    { "name": "Candler Hospital", "category": "Hospital", "distanceMiles": 0.55, "source": "OpenStreetMap Overpass" },
+    { "name": "Memorial Health University Medical Center", "category": "Regional hospital", "distanceMiles": 1.2, "source": "OpenStreetMap Overpass" }
+  ],
+  "photoStrategy": "No verified LoopNet, CoStar, or county photo could be downloaded in this run. Final site uses live Google Street View and Google Maps embeds rather than AI-generated or local photos.",
+  "sources": [
+    { "name": "Ryan T. Schneider directive", "url": "Telegram instruction", "dateAccessed": "2026-06-15" },
+    { "name": "Existing ListingStream 5501 Abercorn draft facts", "url": "https://listingstream-portal.vercel.app/property-site/5501-abercorn-street", "dateAccessed": "2026-06-15" },
+    { "name": "OpenStreetMap Nominatim geocoding", "url": "https://nominatim.openstreetmap.org/search", "dateAccessed": "2026-06-15" },
+    { "name": "OpenStreetMap Overpass demand-generator query", "url": "https://overpass-api.de/api/interpreter", "dateAccessed": "2026-06-15" },
+    { "name": "Census Reporter ACS latest API", "url": "https://api.censusreporter.org/1.0/data/show/latest", "dateAccessed": "2026-06-15" },
+    { "name": "Cushman & Wakefield U.S. MarketBeats", "url": "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats", "dateAccessed": "2026-06-15" },
+    { "name": "PIER Commercial website/logo source", "url": "https://www.piercommercial.com/", "dateAccessed": "2026-06-15" },
+    { "name": "Google Maps embed", "url": "https://maps.google.com/maps?q=5501%20Abercorn%20Street%20Savannah%20GA&output=embed", "dateAccessed": "2026-06-15" }
+  ]
+}
