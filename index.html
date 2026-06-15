@@ -12,14 +12,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root { --orange: #CB521E; --navy: #1a1a2e; --ink: #171717; --muted: #666b76; --soft: #f5f2ef; --line: #e7ded7; --white: #fff; }
+    :root { --orange: #CB521E; --navy: #1a1a2e; --dark: #0f1923; --ink: #1a1a2e; --muted: #5f6672; --soft: #f8f8f8; --line: #e8e8e8; --white: #fff; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--ink); background: #ffffff; font-size: 16px; line-height: 1.6; }
+    body { margin: 0; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; background: #ffffff; font-size: 16px; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(26,26,46,.94); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.08); }
+    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: #0f1923; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.08); }
     .nav-inner { height: 78px; display: grid; grid-template-columns: 220px 1fr 190px; gap: 24px; align-items: center; }
     .pier-logo { display: block; width: auto; object-fit: contain; }
     .pier-logo-nav { height: 58px; max-width: 210px; }
@@ -33,10 +33,16 @@
     .btn-white { background: #fff; color: var(--navy); }
     .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; }
     .btn-outline:hover { background: #fff; color: var(--navy); }
-    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background-image: url('photos/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-    #hero:before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.75) 100%); }
+
+    .btn-primary { background: #CB521E; color: white; }
+    .btn-secondary { background: transparent; border: 2px solid #1a1a2e; color: #1a1a2e; }
+    #hero .btn-secondary, #hero .btn-outline { border-color: white; color: white; }
+    #hero { min-height: 100vh; color: #fff; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0; background-image: url('photos/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+    #hero:before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,25,35,.42) 0%, rgba(15,25,35,.78) 100%); }
     .hero-grid { position: relative; z-index: 2; display: block; max-width: 900px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(203,82,30,.22); color: #fff; border: 1px solid rgba(203,82,30,.55); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-content { padding-top: 90px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(203,82,30,.22); color: #CB521E; border: 1px solid rgba(203,82,30,.55); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    #hero .eyebrow { color: #fff; }
     .eyebrow:before, .section-label:before { content: ''; width: 34px; height: 3px; background: var(--orange); display: inline-block; border-radius: 999px; }
     h1 { font-size: clamp(48px, 8vw, 96px); line-height: .94; margin: 26px 0 24px; letter-spacing: -.06em; font-weight: 900; }
     h1 span { color: var(--orange); }
@@ -56,40 +62,45 @@
     h3 { font-size: 26px; line-height: 1.15; margin: 0 0 18px; letter-spacing: -.03em; color: var(--navy); }
     .lead { font-size: 19px; color: #45464d; }
     .overview-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: start; }
-    .spec-table { border: 1px solid var(--line); border-radius: 24px; overflow: hidden; margin-top: 34px; background: #fff; }
+    .spec-table { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-top: 34px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
     .spec-row { display: grid; grid-template-columns: 42% 58%; border-bottom: 1px solid var(--line); }
+    .spec-row:nth-child(even) { background: #f8f8f8; }
     .spec-row:last-child { border-bottom: 0; }
     .spec-row div { padding: 14px 18px; }
-    .spec-row div:first-child { background: #fbf8f5; font-weight: 900; color: var(--navy); }
+    .spec-row div:first-child { background: rgba(203,82,30,.06); font-weight: 900; color: var(--navy); }
+    .spec-row div:last-child { color: #CB521E; font-weight: 700; }
     .visual-card { position: sticky; top: 108px; border-radius: 30px; overflow: hidden; background: var(--soft); border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(26,26,46,.12); }
     .visual-card iframe { width: 100%; height: 510px; border: 0; display: block; }
     .visual-card .caption { padding: 18px 20px; color: var(--muted); font-size: 14px; }
-    #highlights, #market { background: var(--soft); }
+    #overview { background: #ffffff; color: #1a1a2e; }
+    #highlights { background: #f8f8f8; color: #1a1a2e; }
+    #gallery { background: #ffffff; color: #1a1a2e; }
+    #location { background: #f8f8f8; color: #1a1a2e; }
+    #market { background: #ffffff; color: #1a1a2e; }
+    #opportunity { background: #f8f8f8; color: #1a1a2e; }
     .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
-    .highlight-card, .market-card, .path-card { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px; min-height: 230px; box-shadow: 0 16px 36px rgba(26,26,46,.06); }
+    .highlight-card, .market-card, .path-card { background: #ffffff; border: 1px solid #e8e8e8; color: #1a1a2e; border-radius: 18px; padding: 28px; min-height: 230px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .highlight-card { border-top: 4px solid #CB521E; }
     .metric { color: var(--orange); font-size: 42px; line-height: 1; font-weight: 900; letter-spacing: -.05em; margin-bottom: 18px; }
     .highlight-card h3, .market-card h3 { font-size: 21px; }
     .gallery-single { margin-top: 36px; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(26,26,46,.12); background: #ebe4de; }
     .gallery-single iframe { width: 100%; height: 620px; border: 0; display: block; }
     .gallery-caption { padding: 16px 20px; color: var(--navy); background: #fff; font-weight: 800; }
-    #location { background: #fff; }
     .location-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: stretch; }
     .map-box iframe { width: 100%; height: 560px; border: 0; border-radius: 28px; box-shadow: 0 24px 60px rgba(26,26,46,.12); }
-    .anchors { background: var(--navy); color: #fff; border-radius: 28px; padding: 34px; }
-    .anchors h3 { color: #fff; }
+    .anchors { background: #ffffff; color: #1a1a2e; border: 1px solid #e8e8e8; border-radius: 18px; padding: 34px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .anchors h3 { color: #1a1a2e; }
     .anchors ul { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 13px; }
-    .anchors li { position: relative; padding-left: 22px; color: rgba(255,255,255,.84); }
+    .anchors li { position: relative; padding-left: 22px; color: #45464d; }
     .anchors li:before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
-    .anchors b { color: #fff; }
-    .market-card { min-height: 200px; }
+    .anchors b { color: #1a1a2e; }
+    .market-card { min-height: 200px; border-bottom: 4px solid #CB521E; }
     .market-card .big { font-size: 44px; font-weight: 900; color: var(--orange); letter-spacing: -.05em; line-height: 1; }
     .market-card .label { margin: 10px 0; color: var(--navy); font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: .1em; }
-    #opportunity { background: var(--navy); color: #fff; }
-    #opportunity h2, #opportunity h3 { color: #fff; }
-    #opportunity .lead { color: rgba(255,255,255,.76); }
+    #opportunity .lead { color: #45464d; }
     .path-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 36px; }
-    .path-card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.78); min-height: 310px; }
-    .path-card h3 { color: #fff; }
+    .path-card { background: #ffffff; border-color: #e8e8e8; border-top: 4px solid #CB521E; color: #1a1a2e; min-height: 310px; }
+    .path-card h3 { color: #1a1a2e; }
     .path-card .rule { width: 46px; height: 4px; border-radius: 999px; background: var(--orange); margin-bottom: 18px; }
     #contact { background: var(--orange); color: #fff; }
     #contact h2 { color: #fff; }
@@ -97,14 +108,14 @@
     .process { list-style: none; margin: 30px 0 0; padding: 0; counter-reset: steps; display: grid; gap: 16px; }
     .process li { counter-increment: steps; display: grid; grid-template-columns: 52px 1fr; gap: 15px; align-items: start; color: rgba(255,255,255,.9); }
     .process li:before { content: counter(steps); width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--orange); font-size: 20px; font-weight: 900; }
-    .contact-card { background: #fff; color: var(--ink); border-radius: 30px; padding: 34px; display: grid; grid-template-columns: 160px 1fr; gap: 24px; box-shadow: 0 30px 70px rgba(0,0,0,.18); }
+    .contact-card { background: #ffffff; color: #1a1a2e; border-radius: 12px; padding: 40px; display: grid; grid-template-columns: 160px 1fr; gap: 24px; box-shadow: 0 12px 36px rgba(0,0,0,.14); }
     .contact-logo-card { width: 160px; min-height: 130px; border-radius: 24px; background: var(--navy); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 20px; }
     .contact-card h3 { margin-bottom: 4px; }
     .contact-card p { margin: 0 0 12px; color: var(--muted); }
     .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
     .contact-actions .btn { border-radius: 14px; padding: 12px 16px; }
     .btn-dark { background: var(--navy); color: #fff; }
-    footer { background: var(--navy); color: rgba(255,255,255,.72); padding: 46px 0; text-align: center; }
+    footer { background: #0f1923; color: white; padding: 46px 0; text-align: center; }
     .fade { opacity: 0; transform: translateY(24px); transition: .7s ease; }
     .fade.visible { opacity: 1; transform: none; }
     @media (max-width: 980px) { .nav-inner { grid-template-columns: 1fr auto; } .nav-links { display: none; } .overview-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; } .stats-grid, .card-grid { grid-template-columns: repeat(2, 1fr); } .path-grid { grid-template-columns: repeat(2, 1fr); } .visual-card { position: static; } }
@@ -124,7 +135,7 @@
 
   <header id="hero">
     <div class="container hero-grid">
-      <div class="fade">
+      <div class="fade hero-content">
         <div class="eyebrow">For Sale, Investment Opportunity, Savannah, GA</div>
         <h1>5501 Abercorn <span>Street</span></h1>
         <p class="hero-subtitle">Acquire +-48,943 SF of existing office and commercial improvements on +-3.6 acres along Savannah's Abercorn Street corridor at a $5,000,000 asking price, creating a compelling basis for repositioning, occupancy, or long-range redevelopment.</p>
