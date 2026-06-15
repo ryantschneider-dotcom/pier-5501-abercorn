@@ -36,7 +36,7 @@
     .btn-white { background: #fff; color: var(--navy); }
     .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; }
     .btn-outline:hover { background: #fff; color: var(--navy); }
-    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background: linear-gradient(135deg, #0f1923 0%, #1a2d42 60%, #0f1923 100%); background-size: cover; background-position: center; background-repeat: no-repeat; }
+    #hero { height: 100vh; min-height: 600px; color: #fff; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0 0 80px; background-image: url('photos/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
     #hero:before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.75) 100%); }
     .hero-grid { position: relative; z-index: 2; display: block; max-width: 900px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(203,82,30,.22); color: #fff; border: 1px solid rgba(203,82,30,.55); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
@@ -101,7 +101,7 @@
     .process li { counter-increment: steps; display: grid; grid-template-columns: 52px 1fr; gap: 15px; align-items: start; color: rgba(255,255,255,.9); }
     .process li:before { content: counter(steps); width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--orange); font-size: 20px; font-weight: 900; }
     .contact-card { background: #fff; color: var(--ink); border-radius: 30px; padding: 34px; display: grid; grid-template-columns: 160px 1fr; gap: 24px; box-shadow: 0 30px 70px rgba(0,0,0,.18); }
-    .contact-logo-card { width: 160px; min-height: 130px; border-radius: 24px; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .contact-logo-card { width: 160px; min-height: 130px; border-radius: 24px; background: var(--navy); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 20px; }
     .contact-card h3 { margin-bottom: 4px; }
     .contact-card p { margin: 0 0 12px; color: var(--muted); }
     .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
@@ -118,7 +118,16 @@
 <body>
   <nav>
     <div class="container nav-inner">
-      <a href="#hero" aria-label="PIER Commercial Real Estate home"><img class="nav-logo-img" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="nav-logo-fallback" aria-hidden="true"><div class="nav-logo-squares"><div class="nav-logo-square"></div><div class="nav-logo-square"></div><div class="nav-logo-square"></div><div class="nav-logo-square"></div></div><span class="nav-logo-main">PIER COMMERCIAL</span><span class="nav-tagline">REAL ESTATE</span></div></a>
+      <a href="#hero" aria-label="PIER Commercial Real Estate home"><div style="display:flex;flex-direction:column;line-height:1;align-items:flex-start;">
+  <div style="display:flex;gap:4px;margin-bottom:5px;">
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+  </div>
+  <span style="color:white;font-size:13px;font-weight:700;letter-spacing:0.12em;">PIER COMMERCIAL</span>
+  <span style="color:#CB521E;font-size:10px;letter-spacing:0.1em;font-weight:600;">REAL ESTATE</span>
+</div></a>
       <div class="nav-links">
         <a href="#overview">Overview</a><a href="#highlights">Highlights</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#market">Market</a><a href="#opportunity">Opportunity</a><a href="#contact">Contact</a>
       </div>
@@ -276,7 +285,16 @@
         </ol>
       </div>
       <div class="contact-card fade">
-        <div class="contact-logo-card"><img src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:40px; margin-bottom:12px;"></div>
+        <div class="contact-logo-card"><div style="display:flex;flex-direction:column;line-height:1;align-items:flex-start;">
+  <div style="display:flex;gap:4px;margin-bottom:5px;">
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+  </div>
+  <span style="color:white;font-size:13px;font-weight:700;letter-spacing:0.12em;">PIER COMMERCIAL</span>
+  <span style="color:#CB521E;font-size:10px;letter-spacing:0.1em;font-weight:600;">REAL ESTATE</span>
+</div></div>
         <div>
           <h3>Ryan T. Schneider, CCIM</h3>
           <p>President, PIER Commercial Real Estate</p>
@@ -293,7 +311,16 @@
 
   <footer>
     <div class="container">
-      <img class="logo" src="https://www.piercommercial.com/wp-content/uploads/Brokeragetransp-1.png" alt="PIER Commercial Real Estate" style="height:54px; filter:brightness(0) invert(1); margin:0 auto 18px;">
+      <div style="display:flex;flex-direction:column;line-height:1;align-items:flex-start;">
+  <div style="display:flex;gap:4px;margin-bottom:5px;">
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+    <div style="width:18px;height:18px;background:#CB521E;"></div>
+  </div>
+  <span style="color:white;font-size:13px;font-weight:700;letter-spacing:0.12em;">PIER COMMERCIAL</span>
+  <span style="color:#CB521E;font-size:10px;letter-spacing:0.1em;font-weight:600;">REAL ESTATE</span>
+</div>
       <p>This offering is for discussion purposes only. Information is believed reliable but not guaranteed. Buyer must independently verify all property, zoning, financial, traffic, demographic, and market information.</p>
       <p>© 2026 PIER Commercial Real Estate. Ryan T. Schneider, CCIM.</p>
     </div>
