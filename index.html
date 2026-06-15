@@ -13,18 +13,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
 
-    /* GLOBAL LIGHT MODE OVERRIDE */
+    /* GLOBAL LIGHT MODE OVERRIDE — explicit section IDs only, no nth-child */
     body { background: #ffffff !important; color: #1a1a2e !important; }
-    section:not(#hero):not(#stats):not(.stats-bar):not(#contact):not(footer) {
-        background: #ffffff !important;
-        color: #1a1a2e !important;
-    }
-    section:nth-child(even):not(#hero):not(#stats):not(.stats-bar):not(#contact):not(footer) {
-        background: #f8f8f8 !important;
-    }
-    h1, h2, h3, h4, p, li, td, th, span:not(.eyebrow):not(.stat-label):not(.stat-value) {
-        color: inherit;
-    }
+    #overview { background: #ffffff !important; color: #1a1a2e !important; }
+    #highlights { background: #f8f8f8 !important; color: #1a1a2e !important; }
+    #gallery { background: #ffffff !important; color: #1a1a2e !important; }
+    #location { background: #f8f8f8 !important; color: #1a1a2e !important; }
+    #market { background: #ffffff !important; color: #1a1a2e !important; }
+    #opportunity { background: #f8f8f8 !important; color: #1a1a2e !important; }
+    /* Contact section: MUST be orange — highest specificity, no !important conflicts */
+    html body section#contact { background: #CB521E !important; color: #ffffff !important; }
+    html body section#contact h2 { color: #ffffff !important; }
+    html body section#contact .section-label { color: #ffffff !important; }
+    html body section#contact .process li { color: rgba(255,255,255,.9) !important; }
+    /* Contact card inside orange section stays white */
+    html body section#contact .contact-card { background: #ffffff !important; color: #1a1a2e !important; }
+    html body section#contact .contact-card h3 { color: #1a1a2e !important; }
+    html body section#contact .contact-card p { color: #5f6672 !important; }
+    html body section#contact .contact-card a { color: #1a1a2e !important; }
 
     :root { --orange: #CB521E; --navy: #1a1a2e; --dark: #0f1923; --ink: #1a1a2e; --muted: #5f6672; --soft: #f8f8f8; --line: #e8e8e8; --white: #fff; }
     * { box-sizing: border-box; }
